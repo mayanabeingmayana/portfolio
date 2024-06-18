@@ -186,7 +186,7 @@ export default function Home() {
         {currentContent === 15 &&
         <div className='text-center text-white w-[800px] border border-[#A6FDAF] rounded-xl'>
         <p className='text-[20px] p-5'>
-        it was the most beautiful vision ever, I swear. after being asked to try the app, without any further explanations, they got the point of it and moved through the app very easily. even my grandma didn’t have any problems touching a target. to use with one hand though, it’s hard to hit a note if it’s small and at the top of the screen. but i’m working on it. in the upcoming weeks, I'll have a full case study and would love to have you here to watch it come to life        </p>
+        it was the most beautiful vision ever, I swear. after being asked to try the app, without any further explanations, they got the point of it and moved through the app very easily. even my grandma didn’t have any problems touching a target. to use with one hand though, it’s hard to hit a list if it’s small and at the top of the screen. but i’m working on it. in the upcoming weeks, I'll have a full case study and would love to have you here to watch it come to life        </p>
       </div>
         }
 
