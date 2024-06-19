@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image'
 import { LuArrowRight, LuArrowLeft } from "react-icons/lu";
 
 export default function Home() {
@@ -32,8 +33,19 @@ export default function Home() {
         )}
         {currentContent === 2 && (
           <div className='text-white flex items-center w-[850px]'>
-            <img className="w-56 h-120 object-contain" src="/mockup1.png" alt="Background" />
-            <img className="w-56 h-120 object-contain ml-4" src="/line.png" alt="Background" />
+                  <Image
+                  src="/mockup1.png"
+                  alt="first screen on Figma"
+                  width={224}
+                  height={120}
+                  />
+                  <Image
+                  src="/line.png"
+                  alt="arrow"
+                  width={224}
+                  height={120}
+                  className='ml-4'
+                  />
             <p className="ml-4 text-[20px]">
               this is literally the first screen I drew on Figma. the concept is a social app to share lists, and as someone who was a graphic designer and has worked with the Adobe Suite, it wasn't hard to understand how to use it
             </p>
@@ -52,9 +64,26 @@ export default function Home() {
             take a look at these screens. they have 9 navigation buttons each. it was based on what other applications looked like. I didn't think much about it at the time, the only thing that mattered was that it looked nice enough
             </p>
             <div className='flex'>
-          <img className="w-56 h-120 object-contain" src="/home1.png" alt="Background" />
-          <img className="w-56 h-120 object-contain ml-4" src="/explore1.png" alt="Background" />
-          <img className="w-56 h-120 object-contain ml-4" src="/profile1.png" alt="Background" />
+            <Image
+            src="/home1.png"
+            alt="home screen"
+            width={224}
+            height={120}
+            />
+            <Image
+            src="/explore1.png"
+            alt="explore screen"
+            width={224}
+            height={120}
+            className='ml-4'
+            />
+            <Image
+            src="/profile1.png"
+            alt="profile screen"
+            width={224}
+            height={120}
+            className='ml-4'
+            />
           </div>
         </div>}
 
@@ -70,8 +99,19 @@ export default function Home() {
         {currentContent === 6 &&
         <div className='text-white flex flex-col items-center justify-center'>
         <div className='flex'>
-      <img className="w-56 h-120 object-contain" src="/home2.png" alt="Background" />
-      <img className="w-56 h-120 object-contain ml-4" src="/home2.1.png" alt="Background" />
+          <Image
+            src="/home2.png"
+            alt="home screen"
+            width={224}
+            height={120}
+          />
+          <Image
+            src="/home2.1.png"
+            alt="home screen with the menu"
+            width={224}
+            height={120}
+            className='ml-4'
+          />
       </div>
     </div>}
 
@@ -109,9 +149,26 @@ export default function Home() {
                  the user would enter the app on the "for you" screen. then, tapping on the button would display two more options. if the user tapped the arrow on the left, the screen would display the main buttons. from there, the user could choose where to go, each button having its own set of paths
                  </p>
                  <div className='flex'>
-               <img className="w-56 h-120 object-contain" src="/home3.png" alt="Background" />
-               <img className="w-56 h-120 object-contain ml-4" src="/home3.1.png" alt="Background" />
-               <img className="w-56 h-120 object-contain ml-4" src="/home3.2.png" alt="Background" />
+                 <Image
+                 src="/home3.png"
+                 alt="home for you"
+                 width={224}
+                 height={120}
+                 />
+                 <Image
+                 src="/home3.1.png"
+                 alt="home screen with the menu"
+                 width={224}
+                 height={120}
+                 className='ml-4'
+                 />
+                 <Image
+                 src="/home3.2.png"
+                 alt="home screen"
+                 width={224}
+                 height={120}
+                 className='ml-4'
+                 />
                </div>
              </div>}
 
@@ -127,10 +184,21 @@ export default function Home() {
 
         {currentContent === 11 &&
           <div className='text-white flex items-center w-[850px]'>
-          <img className="w-72 h-130 object-contain" src="/home4.png" alt="Background" />
+            <Image
+            src="/home4.png"
+            alt="home screen"
+            width={288}
+            height={130}
+            />
           <div className='h-96 mb-[160px]'>
           <div className='flex'>
-          <img className="w-56 h-120 object-contain ml-4 mb-[220px]" src="/line.png" alt="Background" />
+          <Image
+            src="/line.png"
+            alt="home screen"
+            width={224}
+            height={120}
+            className="ml-4 mb-[220px]"
+          />
           <p className="ml-4 text-[20px]">
           the title of the screen is displayed at the top center to aid navigation
           </p>
@@ -149,9 +217,14 @@ export default function Home() {
 
         {currentContent === 12 &&
           <div className='text-white flex items-center w-[850px]'>
-            <img className="w-72 h- h-130 object-contain" src="/home4.1.png" alt="Background" />
+            <Image
+            src="/home4.1.png"
+            alt="list view"
+            width={288}
+            height={130}
+            />
             <img className="w-56 h-120 object-contain ml-4 mb-40" src="/line.png" alt="Background" />
-            <p className="ml-4 text-[20px] mb-40">
+            <p className="ml-4 text-[20px] mb-[173px]">
             touch the note to interact
             </p>
           </div>
@@ -161,7 +234,12 @@ export default function Home() {
 
         {currentContent === 13 &&
           <div className='text-white flex items-center w-[850px]'>
-            <img className="w-72 h- h-130 object-contain" src="/home4.2.png" alt="Background" />
+            <Image
+            src="/home4.2.png"
+            alt="home screen with the menu"
+            width={288}
+            height={130}
+            />
             <img className="w-56 h-120 object-contain ml-4 mt-60" src="/line.png" alt="Background" />
             <p className="ml-4 text-[20px] mt-60">
             the menu is large to make it easy to tap the desired button on any device size
@@ -173,7 +251,12 @@ export default function Home() {
 
         {currentContent === 14 &&
           <div className='text-white flex items-center w-[850px]'>
-            <img className="w-72 h- h-130 object-contain" src="/search.png"  alt="Background" />
+            <Image
+            src="/search.png"
+            alt="search screen"
+            width={288}
+            height={130}
+            />
             <img className="w-56 h-120 object-contain ml-4 mt-96" src="/line.png" alt="Background" />
             <p className="ml-4 mt-96 text-[20px]">
             the search field is displayed at the bottom instead of the top to make it simpler to complete the task
@@ -195,7 +278,12 @@ export default function Home() {
 
         {currentContent === 16 &&
           <div className='text-white flex items-center w-[950px]'>
-            <img className="w-72 h- h-130 object-contain" src="/apple.png"  alt="Background" />
+            <Image
+            src="/apple.png"
+            alt="apple screen"
+            width={288}
+            height={130}
+            />
             <img className="w-56 h-120 object-contain ml-4 mt-20" src="/line.png" alt="Background" />
             <p className='text-left text-white w-[800px] border border-[#A6FDAF] rounded-xl p-5'>
             if you’re more experienced, you probably already know what I have just found out. both Android and IOS have functionalities designed to improve user experience on large devices. once enabled, they can pull down the top of the screen. however, on phones the size of an iPhone Pro Max, for example, this feature isn't sufficient. it’s still too arduous; the hand doesn’t reach the top buttons even when they’re not all the way at the top. for this reason, my quest continues. the best solution for now seems to be designing the app with very easy bottom navigation for any device
