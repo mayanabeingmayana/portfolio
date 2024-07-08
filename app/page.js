@@ -229,7 +229,7 @@ const Home = () => {
       <section className="w-full max-w-3xl text-center mb-4">
         <h2 className="text-2xl font-bold mb-2">Conclusion</h2>
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        The validation of the commenting feature was successful, with participants responding positively and indicating a high likelihood of regular use. The feature meets user needs and would add a valuable layer of interactivity and community engagement to any movie tracking application. The next steps will be to build a better experience, test the feedback received, and make sure the final product is the best version possible.</p>
+        The validation of the commenting feature was successful, with participants responding positively and indicating a high likelihood of regular use. Moving forward, I will refine navigation, enhance visual feedback, and build a more robust prototype to conduct additional tests. Continuous iterative testing and user feedback incorporation will be crucial to ensure a seamless user experience. These steps will ensure the comment feature exceeds user expectations and enhances overall engagement on any platform.</p>
       </section>
 
 
@@ -332,7 +332,7 @@ const Home = () => {
       <section className="w-full max-w-3xl text-center mb-4">
         <h2 className="text-2xl font-bold mb-2">The design process</h2>
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        The next screen displays the first screen I drew on Figma, ever. As someone who has worked with the Adobe Suite, it was easy to learn. To be fully honest, when I chose to solve this problem, UX design was something I only dedicated a third of my time to, because people often said it would be beneficial if I knew it. I was focused on learning how to code and fascinated by the possibility of bringing some of my ideas to life. However, after laying the foundation, I oscillated between the blank screen and the code, unsure of how to create the concept I had in mind. The more I tried, the more I doubted my ability to proceed. That's when I decided to sketch before coding. This approach led me to where I am now. As I started drawing, I wanted to learn more and couldn’t stop striving to make it easier, simpler, more intuitive, and enjoyable to use… That's when the UX designer in me was born.
+        The next screen displays the first lines I drew on Figma, ever. As someone who has worked with the Adobe Suite, it was easy to learn. To be fully honest, when I chose to solve this problem, UX design was something I only dedicated a third of my time to, because people often said it would be beneficial if I knew it. I was focused on learning how to code and fascinated by the possibility of bringing some of my ideas to life. However, after laying the foundation, I oscillated between the blank screen and the code, unsure of how to create the concept I had in mind. The more I tried, the more I doubted my ability to proceed. That's when I decided to sketch before coding. This approach led me to where I am now. As I started drawing, I wanted to learn more and couldn’t stop striving to make it easier, simpler, more intuitive, and enjoyable to use… That's when the UX designer in me was born.
         </p>
       </section>
       <div className='border-2 rounded-lg'>
@@ -461,8 +461,7 @@ const Home = () => {
 
                <section className="w-full max-w-3xl text-center mb-4 mt-3">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        I could try to make sure you understand what I was thinking, but I won't because I am not sure... I remember it was very challenging to build a lo-fi prototype because my mind was a mess, I would stop a hundred times to think where the next tap should take. The only thing that seemed to make some sense was that it's easier to tap the right button if there's only three instead of six or four. Then, gladly that baby ux designer in me whispered: if you're having trouble understanding it, imagine the users! What a smart little girl! After that, I started thinking how a simple bottom centered navigation would look like. Then, I built it.
-        </p>
+        I could try to make sure you understand what I was thinking, but I won't because I'm not sure myself. I remember it was very challenging to build a lo-fi prototype because my mind was a mess. I would stop a hundred times to think about where the next tap should lead. The only thing that seemed to make some sense was that it's easier to tap the right button if there are only three instead of six or four. Then, thankfully, that little UX designer in me whispered: if you're having trouble understanding it, imagine the users! What a smart little girl! After that, I started thinking about how a simple bottom-centered navigation would look. Then, I built it.        </p>
       </section>
 
       <Arrow />
