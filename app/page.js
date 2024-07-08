@@ -179,7 +179,7 @@ const Home = () => {
         </button>
 
         <button className="border-4 border-[#A6FDAF] p-2 rounded-lg">
-  <a href="https://www.figma.com/proto/YxDpoAnDFM5GZU1oxZEyzj/screens?node-id=224-1877&t=RTAO0vnwIm9ol5ux-1&scaling=scale-down&content-scaling=fixed&page-id=158%3A524&starting-point-node-id=158%3A773" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.figma.com/proto/4lCUsxhnJLciIbpW1BmTEy/Comments.tv?node-id=0-1&t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
     Click here to interact with the prototype
   </a>
 </button>
@@ -398,9 +398,11 @@ const Home = () => {
         </p>
       </section>
 
-      <button onClick={handlePlayPause} className="border-4 border-[#A6FDAF] p-2 rounded-lg">
-          Click here to see how Twitter looks in my grandma's phone
-        </button>
+      <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
+  <a href="https://www.figma.com/proto/LQx1SfTYGDnDtqeLdrcV9S/Grandma's-phone?node-id=0-1&t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
+    Click here to see my grandma's phone
+  </a>
+</button>
 
       <div className='flex gap-8'>
           <Image
@@ -473,7 +475,7 @@ const Home = () => {
       </section>
 
       <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
-  <a href="https://www.figma.com/proto/VuFo0KIshvdZFrFDo8Xg06/screens?node-id=160-697&t=PuuFLbe7zKjMeyxP-1&starting-point-node-id=160%3A697" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
     Click here to interact with the prototype
   </a>
 </button>
