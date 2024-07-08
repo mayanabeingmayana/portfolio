@@ -43,3 +43,25 @@ main {
   right: 0;
 }
 
+.videoPlayer {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 720px;
+  height: 440px;
+}
+
+.videoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playPauseButton {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #A6FDAF;
+  border: none;
+  border-radius: 8px; /* Adjust the value as needed for roundness */
+}

@@ -1,69 +1,374 @@
-"use client";
+"use client"
 
-import React, { useState } from 'react';
-import Image from 'next/image'
-import { LuArrowRight, LuArrowLeft } from "react-icons/lu";
+import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 
-export default function Home() {
-  const [currentContent, setCurrentContent] = useState(1);
+const Arrow = ({ horizontal }) => (
+  <div className="flex justify-center">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={horizontal ? "100" : "48"}
+      height={horizontal ? "48" : "100"}
+      viewBox={horizontal ? "0 0 48 24" : "0 0 24 48"}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`feather ${horizontal ? 'feather-arrow-right' : 'feather-arrow-down'}`}
+    >
+      {horizontal ? (
+        <line x1="1" y1="12" x2="45" y2="12"></line>
+      ) : (
+        <line x1="12" y1="1" x2="12" y2="45"></line>
+      )}
+    </svg>
+  </div>
+);
 
-  const handlePrev = () => {
-    setCurrentContent((prevContent) => (prevContent === 1 ? 17 : prevContent - 1));
-  };
 
-  const handleNext = () => {
-    setCurrentContent((prevContent) => (prevContent === 17 ? 1 : prevContent + 1));
+
+const Home = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
   };
 
   return (
-<div className="bg-black bg-opacity-90 min-h-screen flex flex-col justify-center items-center relative">
-  <div className="absolute inset-0 bg-gradient-to-br from-black opacity-98 z-10" style={{
-    backgroundImage: 'radial-gradient(#6c6c6c 0.75px, #000000 0.75px)',
-    backgroundSize: '15px 15px'
-  }}></div>
-      <div className="relative z-20 w-[1400px] h-[700px] mb-4 flex flex-col justify-center items-center">
-        {currentContent === 1 && (
-          <div className='text-center text-white'>
-            <p className='text-[20px]'>hi, it’s nice to have you here... I’m</p>
-            <h1 className='text-[#A6FDAF] font-bold text-[100px]'>mayana, the ux/ui designer.</h1>
-            <div className="w-[840px] mx-auto">
-              <p className='text-[20px]'>before, I studied software development and was totally in love with every new piece of knowledge. the app I’m about to introduce was initially thought of as a project to practice something on my own. while facing react though, I wanted more and more to be able to visualize it before trying to type any code. that thought brought us here</p>
-            </div>
+    <div className="p-8 bg-gray-50 flex flex-col items-center">
+      {/* Project Overview Section */}
+
+      <h1 className="text-[104px] w-[900px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the ux designer.</h1>
+      <section className="w-full max-w-3xl text-center mb-4">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        At the age of 26, living in Brazil, I'm a creative soul who loves discussing the creative world. Instead of a formal and boring introduction, let my projects showcase who I am as a professional.</p>
+      </section>
+
+
+      <Arrow />
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <h2 className="text-base mb-5 mt-5 text-center">You're about to read the first of two case studies.<br /> Scroll down and do nothing if you hate it. If you like it, then you'll have to become my friend.</h2>
+      <Arrow />
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+
+      {/* The Problem Section */}
+      <section className="w-full max-w-1xl text-center mb-4">
+        <h2 className="text-4xl font-bold mb-2">Validating a Feature for Movie Tracking Apps</h2>
+      </section>
+
+
+      <Arrow />
+
+
+      {/* The Problem Section */}
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">The problem</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        Reviewing and rating movies or TV shows is pretty common for enthusiasts of these art forms. There are many platforms that allow them to keep track of what they're watching and tell everyone else what they liked or didn't like and why. But users go to other platforms, like Twitter, to find specific comments. They search for words, hoping to get fresh, relevant results. But because the platform isn't built for that specific purpose, it's always a long shot. Movie tracking apps today are full of features, but I believe they are missing this one.</p>
+      </section>
+
+      <Arrow />
+
+      {/* The Goal Section */}
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">The goal</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        There is currently no direct way for users to interact by commenting on specific scenes. Adding a commenting feature could increase user engagement and foster a sense of community. The goal is to validate the need and effectiveness of this feature through research, design, and testing.</p>
+      </section>
+
+      <Arrow />
+
+<section className="w-full max-w-3xl text-center mb-4">
+  <h2 className="text-2xl font-bold mb-2">Research</h2>
+  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+  Conducted interviews with 5 active movie tracking app users to understand their needs and expectations regarding user interaction on the platforms.</p>
+</section>
+
+      {/* User Research Pain Points Section */}
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-base mb-2">Key insights:</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 text-left">
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Users find it difficult and time-consuming to find specific comments online.</h3>
           </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Users try to get their friends and family to watch the same content so they have someone to talk to.</h3>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Existing platforms do not meet all their needs.</h3>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Users are tired of wading through unrelated content.</h3>
+          </div>
+        </div>
+      </section>
+
+<Arrow />
+
+<section className="w-full max-w-3xl text-center mb-4">
+  <h2 className="text-2xl font-bold mb-2">Brainstorming</h2>
+  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+  Brainstorming sessions helped generate ideas for the commenting feature.
+  </p>
+</section>
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-base mb-2">Key considerations:</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 text-left">
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">A live mode where users can live comment movies with friends.</h3>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">The timestamp and comments must be in the same box view.</h3>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Users must have access to an easy to use and powerful search tool.</h3>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="mb-2">Screens must have only the information needed for the current context.</h3>
+          </div>
+        </div>
+      </section>
+
+      <Arrow />
+
+{/* The Goal Section */}
+<section className="w-full max-w-3xl text-center mb-4">
+  <h2 className="text-2xl font-bold mb-2">Prototyping</h2>
+  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+  This interactive prototype, created using Figma, serves as a preliminary model to test and refine the user experience. It includes key functionality such as navigating to the comments section and reading specific comments from specific scenes. By simulating real user interactions, this prototype allows me to gather valuable feedback and make necessary adjustments.
+</p>
+</section>
+
+      <div className='flex gap-5'>
+      <button onClick={handlePlayPause} className="playPauseButton">
+          {isPlaying ? 'Click here to pause the prototype' : 'Click here to watch the prototype'}
+        </button>
+
+        <button className="border-4 border-[#A6FDAF] p-2 rounded-lg">
+  <a href="https://www.figma.com/proto/YxDpoAnDFM5GZU1oxZEyzj/screens?node-id=224-1877&t=RTAO0vnwIm9ol5ux-1&scaling=scale-down&content-scaling=fixed&page-id=158%3A524&starting-point-node-id=158%3A773" target="_blank" rel="noopener noreferrer">
+    Click here to interact with the prototype
+  </a>
+</button>
+      </div>
+
+<div className="videoContainer -mb-6 -mt-4">
+        {isMounted && (
+          <video
+            ref={videoRef}
+            className="videoPlayer"
+          >
+            <source src="/commentingtv.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
-        {currentContent === 2 && (
-          <div className='text-white flex items-center w-[850px]'>
-                  <Image
-                  src="/mockup1.png"
-                  alt="first screen on Figma"
-                  width={224}
-                  height={120}
-                  />
-                  <Image
-                  src="/line.png"
-                  alt="arrow"
-                  width={224}
-                  height={120}
-                  className='ml-4'
-                  />
-            <p className="ml-4 text-[20px]">
-              this is literally the first screen I drew on Figma. the concept is a social app to share lists, and as someone who was a graphic designer and has worked with the Adobe Suite, it wasn't hard to understand how to use it
+      </div>
+
+<Arrow />
+
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">Usability Testing</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        Conducted usability tests with 5 users. A mix of regular movie tracking app users and cinephiles, ages 15-54, with varying levels of technical proficiency. Main tasks:
+        </p>
+      </section>
+      <div className='flex justify-center gap-6 mt-3 mb-5 max-w-3xl'>
+          <span  className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">        Discoverability: Verify if users can easily find and recognize the purpose of the feature.
+          </span>
+          <span className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">Understandability: Verify if users can intuitively understand how to use the tools without prior guidance.</span>
+        </div>
+
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-xl font-bold mb-2">Feedback</h2>
+        <p className="bg-[#A6FDAF] text-left p-4 rounded-lg shadow" style={{ lineHeight: '1.8' }}>
+        1. Participants discovered the purpose of the feature within the first 10 seconds. <br />
+2. Users showed excitement after discovery.<br />
+3. The search tool was highly praised.<br />
+4. Some users suggested adding quick emoji reactions.<br />
+5. Positive feedback was given on the UI.<br />
+6. Users wanted the filter to be more detailed.<br />
+7. Live mode was celebrated, but they were frustrated by not actually seeing it.<br />
+</p>
+      </section>
+
+      <Arrow />
+
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">Conclusion</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        The validation of the commenting feature was successful, with participants responding positively and indicating a high likelihood of regular use. The feature meets user needs and would add a valuable layer of interactivity and community engagement to any movie tracking application. The next steps will be to build a better experience, test the feedback received, and make sure the final product is the best version possible.</p>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+      <Arrow />
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <h2 className="text-base mb-5 mt-5 text-center">If you read the first one, you'll have to read the next too. Just do it.</h2>
+      <div className='mb-2'>
+      <Image
+        src="/nike.png"
+        alt="first screen on Figma"
+        width={100}
+        height={90}
+      />
+    </div>
+      <Arrow />
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+      <div className='-mt-3'>
+      <Arrow />
+      </div>
+
+      {/* The Problem Section */}
+      <section className="w-full max-w-1xl text-center mb-4">
+        <h2 className="text-4xl font-bold mb-2">Building an Easy Navigation for a Simple Lists Sharing App</h2>
+      </section>
+
+
+      <Arrow />
+
+
+      {/* The Problem Section */}
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">The first thought</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        I'm a Gen-Z who has been online for quite too many years. Lately, social media has evolved from simple platforms into complex ecosystems. Applications like Instagram, which initially served as straightforward photo-sharing tools, have become cluttered with excessive and intrusive features. This has left my virtual and real bubble dissatisfied, making us struggle to navigate a cluttered interface and yearn for a better experience. With that in mind, when I was choosing a project to practice my coding skills, I thought: why not build a simple social media platform where users could once again enjoy their time, consuming content <i>they</i> create and select?        </p>
+      </section>
+
+      <Arrow />
+
+      {/* User Research Pain Points Section */}
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">The hypothesis</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 text-left">
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="text-xl font-bold mb-2">1. Overwhelming Features</h3>
+            <p>
+              Users find the app interface cluttered and difficult to navigate due to the addition of numerous features over time.
             </p>
           </div>
-        )}
-        {currentContent === 3 && (
-          <div className='text-center text-white w-[800px] border border-[#A6FDAF] rounded-xl'>
-            <p className='text-[20px] p-5'>
-            from there, I put on the canvas everything that seemed like a good idea (you would laugh). we'll focus on my process of choosing the navigation for the app. in fact, the ux designer in me was born during this project. once I started wanting to make it easier, there was no way to let it go. but the more I tried, the harder it got. and that's why I fell in love with this topic; it was a sign that the road ahead of me was challenging—which means fun
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="text-xl font-bold mb-2">2. Unwanted Content</h3>
+            <p>
+              Users are frustrated with the constant stream of unsolicited content and recommendations.
             </p>
           </div>
-        )}
-        {currentContent === 4 &&
-        <div className='text-white flex flex-col items-center justify-center'>
-            <p className="text-[20px] p-5 text-center w-[800px]">
-            take a look at these screens. they have 9 navigation buttons each. it was based on what other applications looked like. I didn't think much about it at the time, the only thing that mattered was that it looked nice enough
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="text-xl font-bold mb-2">3. Fake Accounts</h3>
+            <p>
+              The increasing presence of bots and fake accounts diminishes the authenticity of interactions on the platform.
             </p>
-            <div className='flex'>
+          </div>
+          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+            <h3 className="text-xl font-bold mb-2">4. Lack of Control</h3>
+            <p>
+              Users feel they have little control over the content that appears in their feed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Arrow />
+
+      <section className="w-full max-w-3xl text-center mb-4">
+        <h2 className="text-2xl font-bold mb-2">The design process</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        The next screen displays the first screen I drew on Figma, ever. As someone who has worked with the Adobe Suite, it was easy to learn. To be fully honest, when I chose to solve this problem, UX design was something I only dedicated a third of my time to, because people often said it would be beneficial if I knew it. I was focused on learning how to code and fascinated by the possibility of bringing some of my ideas to life. However, after laying the foundation, I oscillated between the blank screen and the code, unsure of how to create the concept I had in mind. The more I tried, the more I doubted my ability to proceed. That's when I decided to sketch before coding. This approach led me to where I am now. As I started drawing, I wanted to learn more and couldn’t stop striving to make it easier, simpler, more intuitive, and enjoyable to use… That's when the UX designer in me was born.
+        </p>
+      </section>
+      <div className='border-2 rounded-lg'>
+      <Image
+        src="/mockup1.png"
+        alt="first screen on Figma"
+        width={224}
+        height={120}
+      />
+    </div>
+
+{/* The Goal Section */}
+<section className="w-full max-w-3xl text-center mb-4 mt-5">
+  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+  Then, I started creating lo-fi wireframes to visualize the initial concept of the app, focused on:
+  </p>
+  <section className="w-full max-w-3xl text-center mb-1">
+  <div className="flex justify-center gap-7 mt-5">
+    <div className="bg-[#A6FDAF] w-80 h-10 p-4 rounded-lg shadow flex items-center justify-center md:justify-start">
+      <h3 className="text-xl font-bold mb-2 text-center mt-3">Layout and structure</h3>
+    </div>
+    <div className="bg-[#A6FDAF] w-80 h-10 p-4 rounded-lg shadow flex items-center justify-center md:justify-start">
+      <h3 className="text-xl font-bold mb-2 text-center mt-3">Navigation flow</h3>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<section className="w-full max-w-3xl text-center mb-4">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+          The layout and structure had to be easy to understand at a first glance and the navigation flow couldn't make users think before finding what they're looking for, it had to be intuitive. These two factors were non-negotiable. The following screens were built based on the familiarity principle in design. That's how most apps look like.
+        </p>
+      </section>
+
+<div className='flex gap-8'>
             <Image
             src="/home1.png"
             alt="home screen"
@@ -85,20 +390,18 @@ export default function Home() {
             className='ml-4'
             />
           </div>
-        </div>}
 
+<section className="w-full max-w-[790px] text-center mb-4 mt-5">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+          But it didn't take long for me to realize it didn't make sense. As I worked on it, I was also deep diving again into UX design, design principles, and all the laws that could help me bring up the best experience for the users. Even though it looked like other apps, I realized what a mistake I was making. My phone is broken, so I have been sharing a very small one with my grandma—I'm serious. Do you know what else has six buttons at the bottom? Twitter. And I am always, all the time, hitting the wrong one, no matter how careful I am. It would frustrate users with small phones, so I decreased the number of buttons.
+        </p>
+      </section>
 
-        {currentContent === 5 &&
-          <div className='text-center text-white w-[750px] border border-[#A6FDAF] rounded-xl'>
-          <p className='text-[20px] p-5'>
-          clean design has my heart, and with that in mind, the buttons at the top started to annoy me. why have them there when the ones at the bottom lead to the same path? by removing them, I realized the users would not know where they were. so the text was needed. the trouble came from wanting the screen to be clean, right? instead of just icons, the text went into the buttons, and I also removed two buttons and added a menu
-          </p>
-        </div>}
+      <button onClick={handlePlayPause} className="border-4 border-[#A6FDAF] p-2 rounded-lg">
+          Click here to see how Twitter looks in my grandma's phone
+        </button>
 
-
-        {currentContent === 6 &&
-        <div className='text-white flex flex-col items-center justify-center'>
-        <div className='flex'>
+      <div className='flex gap-8'>
           <Image
             src="/home2.png"
             alt="home screen"
@@ -113,42 +416,23 @@ export default function Home() {
             className='ml-4'
           />
       </div>
-    </div>}
 
+      <section className="w-full max-w-3xl text-center mb-4 mt-3">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        The top buttons didn't have issues with accidentally touching the wrong target, but they still needed to be changed, and I'll explain why. My grandma's phone is the one closest to me, but I've also been using my cousin's iPhone 14 Pro Max. It's a huge phone, which makes it easy to tap the right button... if they're at the bottom. After using her phone from a more UX-oriented perspective, I noticed it's not easy to use if you don't use both hands. It's basically impossible to touch a button at the top of the screen with one hand without risking dropping the phone. Maybe if the user has big hands, it won't be as difficult. Yet, the experience should be the best possible for everyone, not just for people with large hands.        </p>
+      </section>
+      <button onClick={handlePlayPause} className="border-4 border-[#A6FDAF] p-2 rounded-lg">
+          Click here to see how Twitter looks in my cousin's phone
+        </button>
 
-        {currentContent === 7 &&
-                <div className='text-white flex flex-col items-center justify-center'>
-                <p className="text-[20px] p-5 text-center w-[750px]">
-                it seemed like the perfect solution until I noticed it had four main buttons. it may not seem like much to most eyes, but from the perspective of someone who has been using her very small grandma’s phone for quite some time, I disagree. here are some issues to consider:            </p>
-                <div className='flex flex-col w-[600px]'>
-                  <div className='flex'><li className="text-lg text-[#A6FDAF]"></li>
-                  <span>her phone has three navigation buttons at the bottom, like every Android. the problem is they are way too close together, and we keep hitting the wrong one all the time</span></div>
-                  <div className='flex'><li className="text-lg text-[#A6FDAF] mt-5"></li>
-                  <span className='mt-5'>one of my favorite apps is Twitter. it has six navigation buttons at the bottom, and I also keep hitting the wrong one</span></div>
-                  <div className='flex'><li className="text-lg text-[#A6FDAF] mt-5"></li>
-                  <span className='mt-5'>my grandma doesn't use Twitter. she only uses WhatsApp, and she’s annoyed too. it’s all about tapping where she’s supposed to drag, pressing where she’s supposed to tap, and it never ends</span></div>
-                  <div className='flex'><li className="text-lg text-[#A6FDAF] mt-5"></li>
-                  <span className='mt-5'>my cousin lends me her iPhone 14 Pro Max, and it’s huge, which means it’s easy to tap on the button you want there... if you use both hands. it’s just terrible to use with one hand, to not say impossible</span></div>
-              </div>
+      <section className="w-full max-w-3xl text-center mb-4 mt-3">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        From here, the 'navigation flow' became more complex. It had to be easy and simple to use for everyone, regardless of the device size, whether it was for one-hand use, or the size of the user's hand. However, every time a new idea materialized, I realized it would introduce more difficulties. I felt trapped, as trying to simplify it only seemed to complicate matters further. The following screens are a good example.
 
-            </div>}
+        </p>
+      </section>
 
-
-        {currentContent === 8 &&
-          <div className='text-center text-white w-[920px] border border-[#A6FDAF] rounded-xl'>
-          <p className='text-[20px] p-5'>
-          from that point on, the necessity to build something that felt good to use, no matter the size of the device, became evident. the designs had been created to have a starting point for coding. however, when words like "simple," "intuitive," "user-friendly," and so on joined the mix, I got lost. it was much effortless to create a good-looking, clean app, but delivering a great user experience demanded much more from me. every time a new idea materialized, I would also realize it would bring more difficulty. I felt trapped. trying to make it easier only made it harder. the following screens are a good example
-          </p>
-        </div>}
-
-
-
-        {currentContent === 9 &&
-                 <div className='text-white flex flex-col items-center justify-center'>
-                 <p className="text-[20px] p-5 text-center w-[800px]">
-                 the user would enter the app on the "for you" screen. then, tapping on the button would display two more options. if the user tapped the arrow on the left, the screen would display the main buttons. from there, the user could choose where to go, each button having its own set of paths
-                 </p>
-                 <div className='flex'>
+      <div className='flex gap-8'>
                  <Image
                  src="/home3.png"
                  alt="home for you"
@@ -170,155 +454,45 @@ export default function Home() {
                  className='ml-4'
                  />
                </div>
-             </div>}
 
 
-        {currentContent === 10 &&
-                  <div className='text-center text-white w-[800px] border border-[#A6FDAF] rounded-xl'>
-                  <p className='text-[20px] p-5'>
-                  at the time it didn't seem too hard to understand. but building the app with only personal use in mind doesn't make any sense. of course having more steps to complete a simple task didn't bother me—it's my app, it could have 10! nevertheless, the goal is for others to use it as well, a better navigation system was necessary. then, I got a better solution. I built a prototype of the following screens and watched two friends and my grandma use it
-                  </p>
-                </div>}
+               <section className="w-full max-w-3xl text-center mb-4 mt-3">
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        I could try to make sure you understand what I was thinking, but I won't because I am not sure... I remember it was very challenging to build a lo-fi prototype because my mind was a mess, I would stop a hundred times to think where the next tap should take. The only thing that seemed to make some sense was that it's easier to tap the right button if there's only three instead of six or four. Then, gladly that baby ux designer in me whispered: if you're having trouble understanding it, imagine the users! What a smart little girl! After that, I started thinking how a simple bottom centered navigation would look like. Then, I built it.
+        </p>
+      </section>
+
+      <Arrow />
+
+      <section className="w-full max-w-3xl text-center mb-3">
+        <h2 className="text-2xl font-bold mb-2">The usability test</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+          As I'm being honest, I'll continue... At first, every time I heard about "UX research" or "testing", a part of me simply wanted to sleep. I didn't see the value in it. Later, after finishing a course led by a professor clearly in love with research, I was weak and fell in love with it too. But when this app was been built, my baby was still learning what's really important. I didn't ran a research or any testings. The good news though, is that I built a prototype and you can test it yourself.
+        </p>
+      </section>
+
+      <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
+  <a href="https://www.figma.com/proto/VuFo0KIshvdZFrFDo8Xg06/screens?node-id=160-697&t=PuuFLbe7zKjMeyxP-1&starting-point-node-id=160%3A697" target="_blank" rel="noopener noreferrer">
+    Click here to interact with the prototype
+  </a>
+</button>
 
 
+        <Arrow />
 
-        {currentContent === 11 &&
-          <div className='text-white flex items-center w-[850px]'>
-            <Image
-            src="/home4.png"
-            alt="home screen"
-            width={288}
-            height={130}
-            />
-          <div className='h-96 mb-[160px]'>
-          <div className='flex'>
-          <Image
-            src="/line.png"
-            alt="home screen"
-            width={224}
-            height={120}
-            className="ml-4 mb-[220px]"
-          />
-          <p className="ml-4 text-[20px]">
-          the title of the screen is displayed at the top center to aid navigation
-          </p>
-          </div>
-          <div className='flex mt-20'>
-          <img className="w-56 h-120 object-contain ml-4 mt-32" src="/line.png" alt="Background" />
-          <p className="ml-4 mt-32 text-[20px]">
-          there are only three navigation buttons, spaced well apart from each other
-          </p>
-          </div>
-          </div>
-        </div>
-        }
+        <section className="w-full max-w-3xl text-center mb-3">
+        <h2 className="text-2xl font-bold mb-2">Conclusions</h2>
+        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
+        After the continuous frustration of building these screens and noticing how annoying it is to use both a small phone and a big phone, I've decided to dive into mobile navigation. How can I build better navigation without breaking design principles and not straying too far from what the user already knows? That's what I'm going to find out. If you would like to help bring any of these apps to life, you can contact me at the email below. If you have any critiques to help me get better, I would happily read your thoughts. I'm going to be a great professional; it's just a matter of time. Bookmark me and stay around. See you in the next update.
+        </p>
 
+      </section>
 
-
-        {currentContent === 12 &&
-          <div className='text-white flex items-center w-[850px]'>
-            <Image
-            src="/home4.1.png"
-            alt="list view"
-            width={288}
-            height={130}
-            />
-            <img className="w-56 h-120 object-contain ml-4 mb-40" src="/line.png" alt="Background" />
-            <p className="ml-4 text-[20px] mb-[173px]">
-            touch the note to interact
-            </p>
-          </div>
-        }
-
-
-
-        {currentContent === 13 &&
-          <div className='text-white flex items-center w-[850px]'>
-            <Image
-            src="/home4.2.png"
-            alt="home screen with the menu"
-            width={288}
-            height={130}
-            />
-            <img className="w-56 h-120 object-contain ml-4 mt-60" src="/line.png" alt="Background" />
-            <p className="ml-4 text-[20px] mt-60">
-            the menu is large to make it easy to tap the desired button on any device size
-            </p>
-          </div>
-        }
-
-
-
-        {currentContent === 14 &&
-          <div className='text-white flex items-center w-[850px]'>
-            <Image
-            src="/search.png"
-            alt="search screen"
-            width={288}
-            height={130}
-            />
-            <img className="w-56 h-120 object-contain ml-4 mt-96" src="/line.png" alt="Background" />
-            <p className="ml-4 mt-96 text-[20px]">
-            the search field is displayed at the bottom instead of the top to make it simpler to complete the task
-            </p>
-          </div>
-        }
-
-
-
-        {currentContent === 15 &&
-        <div className='text-center text-white w-[800px] border border-[#A6FDAF] rounded-xl'>
-        <p className='text-[20px] p-5'>
-        after being asked to try the app, without any further explanation, they understood its purpose and navigated it very easily. even my grandma had no trouble touching a target. however, using it with one hand can be challenging if the list is small and at the top of the screen. I'm working on improving this. in the upcoming weeks, I'll have a full case study and would love to have you here to watch it come to life
-       </p>
-      </div>
-        }
-
-
-
-        {currentContent === 16 &&
-          <div className='text-white flex items-center w-[950px]'>
-            <Image
-            src="/apple.png"
-            alt="apple screen"
-            width={288}
-            height={130}
-            />
-            <img className="w-56 h-120 object-contain ml-4 mt-20" src="/line.png" alt="Background" />
-            <p className='text-left text-white w-[800px] border border-[#A6FDAF] rounded-xl p-5'>
-            if you’re more experienced, you probably already know what I have just found out. both Android and IOS have functionalities designed to improve user experience on large devices. once enabled, they can pull down the top of the screen. however, on phones the size of an iPhone Pro Max, for example, this feature isn't sufficient. it’s still too arduous; the hand doesn’t reach the top buttons even when they’re not all the way at the top. for this reason, my quest continues. the best solution for now seems to be designing the app with very easy bottom navigation for any device
-            </p>
-          </div>
-
-        }
-
-
-
-        {currentContent === 17 &&
-          <div className='text-center text-white w-[650px] border border-[#A6FDAF] rounded-xl'>
-          <p className='text-[20px] p-5'>
-          there is more to see and more to discuss, but I believe this sums up the process very well. if you would like to chat, feel free to email me. I'll be happy to respond. I promise I'm cool—if you're weird, you'll like me!    </p>
-        </div>}
-
-      </div>
-
-      <div className="flex flex-col justify-between z-20">
-        <div>
-        <button
-          className="hover:bg-[#A6FDAF] hover:rounded-3xl hover:text-[#333333] text-white font-bold py-2 px-4"
-          onClick={handlePrev}
-        >
-          <LuArrowLeft className="text-3xl" />
-        </button>
-        <button
-          className="hover:bg-[#A6FDAF] hover:rounded-3xl hover:text-[#333333] text-white font-bold py-2 px-4"
-          onClick={handleNext}
-        >
-          <LuArrowRight className="text-3xl" />
-        </button>
-        </div>
-        <p className='text-white flex justify-center mt-3 text-sm'>{currentContent} / 17</p>
+      <div>
+        <span className='text-blue-600'>mayanathedesigner@gmail.com</span>
       </div>
     </div>
   );
-}
+};
+
+export default Home;
