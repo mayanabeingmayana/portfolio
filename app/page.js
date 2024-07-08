@@ -178,11 +178,11 @@ const Home = () => {
           {isPlaying ? 'Click here to pause the prototype' : 'Click here to watch the prototype'}
         </button>
 
-        <button className="border-4 border-[#A6FDAF] p-2 rounded-lg">
+
   <a href="https://www.figma.com/proto/4lCUsxhnJLciIbpW1BmTEy/Comments.tv?node-id=0-1&t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
-    Click here to interact with the prototype
+  <button className="border-4 border-[#A6FDAF] p-2 rounded-lg">Click here to interact with the prototype</button>
   </a>
-</button>
+
       </div>
 
 <div className="videoContainer -mb-6 -mt-4">
@@ -398,11 +398,13 @@ const Home = () => {
         </p>
       </section>
 
-      <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
+
   <a href="https://www.figma.com/proto/LQx1SfTYGDnDtqeLdrcV9S/Grandma's-phone?node-id=0-1&t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
+  <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
     Click here to see my grandma's phone
+    </button>
   </a>
-</button>
+
 
       <div className='flex gap-8'>
           <Image
@@ -424,9 +426,11 @@ const Home = () => {
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
         The top buttons didn't have issues with accidentally touching the wrong target, but they still needed to be changed, and I'll explain why. My grandma's phone is the one closest to me, but I've also been using my cousin's iPhone 14 Pro Max. It's a huge phone, which makes it easy to tap the right button... if they're at the bottom. After using her phone from a more UX-oriented perspective, I noticed it's not easy to use if you don't use both hands. It's basically impossible to touch a button at the top of the screen with one hand without risking dropping the phone. Maybe if the user has big hands, it won't be as difficult. Yet, the experience should be the best possible for everyone, not just for people with large hands.        </p>
       </section>
-      <button onClick={handlePlayPause} className="border-4 border-[#A6FDAF] p-2 rounded-lg">
-          Click here to see how Twitter looks in my cousin's phone
-        </button>
+      <a href="https://www.figma.com/proto/6D8QPzAXgYYOhgYDkuJDxM/Cousin's-phone?node-id=0-1&t=gLWer4nLQhHDwcjm-1" target="_blank" rel="noopener noreferrer">
+  <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
+    Click here to see my cousin's phone
+    </button>
+  </a>
 
       <section className="w-full max-w-3xl text-center mb-4 mt-3">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
@@ -473,11 +477,10 @@ const Home = () => {
         </p>
       </section>
 
-      <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">
+
   <a href="https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?t=oGipUblutTMuh3ww-1" target="_blank" rel="noopener noreferrer">
-    Click here to interact with the prototype
+  <button className="border-4 border-[#A6FDAF] p-2 rounded-lg mt-2 mb-3">Click here to interact with the prototype</button>
   </a>
-</button>
 
 
         <Arrow />
