@@ -174,7 +174,7 @@ const Home = () => {
 </section>
 
       <div className='flex gap-5'>
-      <button onClick={handlePlayPause} className="playPauseButton">
+      <button onClick={handlePlayPause} className="playPauseButton border-4 border-[#A6FDAF] p-2 rounded-lg">
           {isPlaying ? 'Click here to pause the prototype' : 'Click here to watch the prototype'}
         </button>
 
@@ -489,7 +489,7 @@ const Home = () => {
       </section>
 
       <div className='mt-4'>
-        <span className='text-blue-600 border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>mayanathedesigner@gmail.com</span>
+        <span className='border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>mayanathedesigner@gmail.com</span>
       </div>
     </div>
   );

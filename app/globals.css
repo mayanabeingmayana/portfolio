@@ -61,7 +61,4 @@ main {
   padding: 5px 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #A6FDAF;
-  border: none;
-  border-radius: 8px; /* Adjust the value as needed for roundness */
 }
