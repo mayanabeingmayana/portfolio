@@ -374,20 +374,21 @@ const Home = () => {
             alt="home screen"
             width={224}
             height={120}
+            className='border-2 rounded-lg'
             />
             <Image
             src="/explore1.png"
             alt="explore screen"
             width={224}
             height={120}
-            className='ml-4'
+            className='ml-4 border-2 rounded-lg'
             />
             <Image
             src="/profile1.png"
             alt="profile screen"
             width={224}
             height={120}
-            className='ml-4'
+            className='ml-4 border-2 rounded-lg'
             />
           </div>
 
