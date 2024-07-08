@@ -488,8 +488,8 @@ const Home = () => {
 
       </section>
 
-      <div>
-        <span className='text-blue-600'>mayanathedesigner@gmail.com</span>
+      <div className='mt-4'>
+        <span className='text-blue-600 border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>mayanathedesigner@gmail.com</span>
       </div>
     </div>
   );
