@@ -259,7 +259,6 @@ const Home = () => {
       <div className='mb-2'>
       <Image
         src="/nike.png"
-        alt="first screen on Figma"
         width={100}
         height={90}
       />
