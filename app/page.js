@@ -50,7 +50,7 @@ const Home = () => {
     <div className="p-8 bg-gray-50 flex flex-col items-center">
       {/* Project Overview Section */}
 
-      <h1 className="text-[104px] w-[900px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the ux designer.</h1>
+      <h1 className="text-[104px] w-[1000px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the product designer.</h1>
       <section className="w-full max-w-3xl text-center mb-4">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
         At the age of 26, living in Brazil, I'm a creative soul who loves discussing the creative world. Instead of a formal and boring introduction, let my projects showcase who I am as a professional.</p>
