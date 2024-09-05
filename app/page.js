@@ -158,9 +158,9 @@ const Home = () => {
 </p>
 </section>
 
-      <div className='flex gap-5'>
+      <div onClick={handlePlayPause} className='flex gap-5 playPauseButton mb-4 mt-4'>
       <button onClick={handlePlayPause} className="playPauseButton border-4 border-[#A6FDAF] p-2 rounded-lg">
-          {isPlaying ? 'Click here to pause the prototype' : 'Click here to watch the prototype'}
+          Click here to watch the prototype
         </button>
 
       </div>
