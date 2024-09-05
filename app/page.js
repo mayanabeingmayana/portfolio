@@ -165,13 +165,13 @@ const Home = () => {
 
       </div>
 
-<div className="videoContainer sm:-mb-4 sm:-mt-9 -mb-28 -mt-32">
+<div className="videoContainer sm:mb-2 sm:-mt-1 mb-2 -mt-2">
         {isMounted && (
           <video
             ref={videoRef}
             className="videoPlayer w-[720px] h-[440px]"
           >
-            <source src="/commentingtv.mp4" type="video/mp4" />
+            <source src="/comment.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}
