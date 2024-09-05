@@ -158,14 +158,14 @@ const Home = () => {
 </p>
 </section>
 
-      <div onClick={handlePlayPause} className='flex gap-5 playPauseButton mb-4 mt-4'>
+      <div onClick={handlePlayPause} className='flex gap-5 playPauseButton mb-4'>
       <button onClick={handlePlayPause} className="playPauseButton border-4 border-[#A6FDAF] p-2 rounded-lg">
           Click here to watch the prototype
         </button>
 
       </div>
 
-<div className="videoContainer -mb-9 -mt-9">
+<div className="videoContainer -mb-4 -mt-9">
         {isMounted && (
           <video
             ref={videoRef}
@@ -240,23 +240,27 @@ const Home = () => {
           </span>
           <span className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">An app to dedicate a song to someone, invite others to listen to an album, playlist, meet a new artist, go to a concert and much more. Because music is much more than just listening. Music is everything.</span>
         </div>
-
+        <h2 className="text-sm mb-4 text-center">Clicking on them will take you to the prototype.</h2>
       </div>
 
       <div className='flex gap-16 mb-7'>
+      <a href='https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=1-128&node-type=CANVAS&viewport=778%2C541%2C0.29&t=6T0XbHWWesWMsckM-1&scaling=scale-down&content-scaling=fixed'>
             <Image
             src="/listsapp.png"
             alt="home screen"
-            width={224}
-            height={120}
+            width={200}
+            height={100}
             />
-            <Image
+            </a>
+              <a href='https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?page-id=0%3A1&node-id=1-1955&node-type=FRAME&viewport=966%2C407%2C0.2&t=ST9kHa6TnrkRxG0g-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A1955'>
+              <Image
             src="/dedication.png"
             alt="explore screen"
-            width={224}
-            height={120}
+            width={200}
+            height={100}
             className='ml-4'
-            />
+            />  </a>
+
           </div>
       <div className='-mt-3 mb-3'>
       <Arrow />
