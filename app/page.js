@@ -270,8 +270,11 @@ const Home = () => {
       </section>
 
       <div className='mt-4'>
-        <span className='border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>mayanathedesigner@gmail.com</span>
-      </div>
+  <a href='mailto:mayanathedesigner@gmail.com' className='border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>
+    mayanathedesigner@gmail.com
+  </a>
+</div>
+
     </div>
   );
 };
