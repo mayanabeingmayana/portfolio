@@ -264,7 +264,7 @@ const Home = () => {
 
         <section className="w-full max-w-3xl text-center mb-3">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        After the continuous frustration of building these screens and noticing how annoying it is to use both a small phone and a big phone, I've decided to dive into mobile navigation. How can I build better navigation without breaking design principles and not straying too far from what the user already knows? That's what I'm going to find out. If you would like to help bring any of these apps to life, you can contact me at the email below. If you have any critiques to help me get better, I would happily read your thoughts. I'm going to be a great professional; it's just a matter of time. Bookmark me and stay around. See you in the next update.
+         If you'd like to help bring any of these apps to life, contact me at the email below. If you have any critiques to help me get better, I would happily read your thoughts. I'm going to be a great professional; it's just a matter of time. Bookmark me and stay around. See you in the next update.
         </p>
 
       </section>
