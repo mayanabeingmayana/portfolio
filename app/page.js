@@ -50,7 +50,7 @@ const Home = () => {
     <div className="p-8 bg-gray-50 flex flex-col items-center">
       {/* Project Overview Section */}
 
-      <h1 className="text-[104px] w-[1000px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the product designer.</h1>
+      <h1 className="sm:text-[104px] sm:w-[1000px] text-[60px] w-[450px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the product designer.</h1>
       <section className="w-full max-w-3xl text-center mb-4">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
         At 26, living in Brazil, I’m a creative soul eager to make a solid impact on the boring world around me. To join me on this journey, I invite you to scroll down and check out some of my latest creations. It won’t take more than 5 minutes of your time.</p>
@@ -165,11 +165,11 @@ const Home = () => {
 
       </div>
 
-<div className="videoContainer -mb-4 -mt-9">
+<div className="videoContainer sm:-mb-4 sm:-mt-9 -mb-28 -mt-32">
         {isMounted && (
           <video
             ref={videoRef}
-            className="videoPlayer"
+            className="videoPlayer w-[720px] h-[440px]"
           >
             <source src="/commentingtv.mp4" type="video/mp4" />
             Your browser does not support the video tag.
