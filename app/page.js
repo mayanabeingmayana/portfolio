@@ -53,7 +53,7 @@ const Home = () => {
       <h1 className="text-[104px] w-[1000px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the product designer.</h1>
       <section className="w-full max-w-3xl text-center mb-4">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        At the age of 26, living in Brazil, I'm a creative soul who's eager to make solid contributions to the boring world I live in. To help me in this journey, I invite you to scroll down and take a look at some of my latest creations. It's not more than a 5m read.</p>
+        At 26, living in Brazil, I’m a creative soul eager to make a solid impact on the boring world around me. To join me on this journey, I invite you to scroll down and check out some of my latest creations. It won’t take more than 5 minutes of your time.</p>
       </section>
 
       <Arrow />
@@ -264,7 +264,7 @@ const Home = () => {
 
         <section className="w-full max-w-3xl text-center mb-3">
         <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-         If you'd like to help bring any of these apps to life, contact me at the email below. If you have any critiques to help me get better, I would happily read your thoughts. I'm going to be a great professional; it's just a matter of time. Bookmark me and stay around. See you in the next update.
+        If you’d like to help bring any of these apps to life, feel free to contact me at the email below. If you have any feedback to help me improve, I’d be happy to hear your thoughts. I’m going to be a great professional—it’s just a matter of time. Bookmark me and stick around. See you soon!
         </p>
 
       </section>
