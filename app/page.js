@@ -252,7 +252,7 @@ const Home = () => {
             height={100}
             />
             </a>
-              <a href='https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?page-id=0%3A1&node-id=1-1955&node-type=FRAME&viewport=966%2C407%2C0.2&t=ST9kHa6TnrkRxG0g-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A1955'>
+              <a href='https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?node-id=1-1536&node-type=canvas&t=qID3mbgPK0IVbxK1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A1536'>
               <Image
             src="/dedication.png"
             alt="explore screen"
