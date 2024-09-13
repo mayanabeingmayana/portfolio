@@ -247,7 +247,7 @@ const Home = () => {
       </div>
 
       <div className='flex gap-16 mb-7'>
-      <a href='https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=1-128&node-type=CANVAS&viewport=778%2C541%2C0.29&t=6T0XbHWWesWMsckM-1&scaling=scale-down&content-scaling=fixed'>
+      <a href='https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=56-1109&node-type=canvas&viewport=1407%2C891%2C0.27&t=GEuquyjgl4gmaxGp-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A1118'>
             <Image
             src="/listsapppic.png"
             alt="home screen"
