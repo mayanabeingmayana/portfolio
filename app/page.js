@@ -169,12 +169,15 @@ const Home = () => {
         {isMounted && (
           <video
             ref={videoRef}
-            className="videoPlayer w-[720px] h-[440px]"
+
+            width={300}
+            height={200}
           >
             <source src="/comment.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}
+
       </div>
 
 <Arrow />
@@ -246,18 +249,18 @@ const Home = () => {
       <div className='flex gap-16 mb-7'>
       <a href='https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=1-128&node-type=CANVAS&viewport=778%2C541%2C0.29&t=6T0XbHWWesWMsckM-1&scaling=scale-down&content-scaling=fixed'>
             <Image
-            src="/listsapp.png"
+            src="/listsapppic.png"
             alt="home screen"
-            width={200}
-            height={100}
+            width={300}
+            height={200}
             />
             </a>
               <a href='https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?node-id=1-895&node-type=frame&t=Ak275fbJDNI1HfGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A687'>
               <Image
-            src="/dedication.png"
+            src="/musicapp.png"
             alt="explore screen"
-            width={200}
-            height={100}
+            width={300}
+            height={200}
             className='ml-4'
             />  </a>
 
