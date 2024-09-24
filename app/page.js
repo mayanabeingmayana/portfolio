@@ -92,7 +92,7 @@ export default function Home() {
             className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`rounded-div p-3 max-w-lg ${
+              className={`rounded-div p-3 max-w-xs sm:max-w-lg ${
                 message.sender === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'
               }`}
             >
