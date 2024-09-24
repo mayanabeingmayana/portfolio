@@ -1,290 +1,138 @@
-"use client"
+"use client";
 
-import { useRef, useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 
-const Arrow = ({ horizontal }) => (
-  <div className="flex justify-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={horizontal ? "100" : "48"}
-      height={horizontal ? "48" : "100"}
-      viewBox={horizontal ? "0 0 48 24" : "0 0 24 48"}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={`feather ${horizontal ? 'feather-arrow-right' : 'feather-arrow-down'}`}
-    >
-      {horizontal ? (
-        <line x1="1" y1="12" x2="45" y2="12"></line>
-      ) : (
-        <line x1="12" y1="1" x2="12" y2="45"></line>
-      )}
-    </svg>
-  </div>
-);
-
-
-
-const Home = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const handlePlayPause = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+export default function Home() {
+  const allMessages = [
+    { sender: 'user', text: "hi artificial intelligence, I'm getting ready to apply for product design roles, so I need you to help me practice presenting my project. pretend you're a hiring manager from a big company, get the necessary info, then tell me how to structure it all and make me do my best work. but not only that, you're also my mum"},
+    { sender: 'ai', text: "All right, dear. But first things first, did you eat properly today? Please tell me you have not had any junk food this week!"},
+    { sender: 'user', text: "this is not the time for that, get straight to the point"},
+    { sender: 'ai', text: "Mayana, answer me!"},
+    { sender: 'user', text: "YES, I HAVE EATEN PROPERLY, CAN WE PLEASE START????"},
+    { sender: 'ai', text: "Good, good. I will call your grandmother, she will be happy to know! And yes, now we can. Tell me, how are you going to start your presentation?"},
+    { sender: 'user', text: "I guess I should tell them a little bit about me, like my name is Mayana, I'm a 26-year-old creative soul from Brazil, who loves reading thrillers, listening to old people and the touch of the sun on my skin for the first time in the day. I'm also always thinking of something new and the only thing that makes me sad about having so little time on earth is the fact that I'll never be able to get all my ideas out of my head"},
+    { sender: 'ai', text: "This seems great. But you should consider telling them that your mum is great because, despite the difficulties, she has given you the time and space to find your own world. She watched you go from graphic design to digital marketing, from front-end to product design. How many mothers would do that? Not many, I assure you. When was the last time you told her you loved her?"},
+    { sender: 'user', text: "FOCUS, C'MON! I'll let them know, ok? now I should introduce the app. the point is that earlier this year I was learning how to code. I decided it was time to build something I had thought of and couldn't find tutorials for online, so I chose my list sharing app, because I list everything from 10 reasons why you should never pee outside your home to 19 ways to know if your sister has entered your room, and I think it will be really fun to connect people like me, as well as inspire weird people who don't do that"},
+    { sender: 'ai', text: "You got that from me. My favorite list is “237 reasons to give your mother a grandchild”!"},
+    { sender: 'user', text: " STOP IT!"},
+    { sender: 'ai', text: "Anyway, who is the target audience of your app?"},
+    { sender: 'user', text: "have you ever heard of Pinterest? they describe themselves as an app for 'discovering recipes, home ideas, style inspiration and other ideas to try' and they use pictures. the audience that would love my lists sharing app are the same people that love getting inspired on Pinterest"},
+    { sender: 'ai', text: "It makes sense. Then you need to start talking about your first steps, how you came up with it."},
+    { sender: 'user', text: "I'd like to add something first. while I was learning how to code, I also studied a bit of ux. I did it because it was on my roadmap, nothing more. it was only when I sat down to code the feed that my mind went blank. the other projects I had done before had been built many times, so I had a pretty good idea of how they should look. this one, however, I had nothing. I knew that if I started coding and then decided it wasn't how I wanted it, it would be a huge hassle to recode it all. this thought made me want to draw first. and I did draw on paper. but I didn't like the constraints. I went to figma. and that's when I drew my first frame ever. after that, coding stayed in the back of my mind, because I didn't want to just know what I was going to do, I started wanting to design the best experience possible. the ux designer in me was born, I couldn't help but welcome it"},
+    { sender: 'user', image: "screen1.png"},
+    { sender: 'user', image: "screen1.1.png"},
+    { sender: 'user', image: "screen1.2.png"},
+    { sender: 'user', image: "screen1.3.png"},
+    { sender: 'ai', text: "This is beautiful, the process of finding something to work with love. Please continue."},
+    { sender: 'user', text: "the app itself is very simple and I have no intention of adding more than is necessary. I've found that I'm a minimalist, the apps that make me happiest are the ones that focus on the content, so that's something I'll bring to my creations. the following screens is the first flow I built, ever. six buttons at the bottom and three at the top—these are more like indicators. at the time it seemed pretty good. I hadn't done any research beforehand, I used the previous knowledge I had on UX, which wasn't much, not at all"},
+    { sender: 'user', image: "screen2.png"},
+    { sender: 'user', image: "screen2.1.png"},
+    { sender: 'user', image: "screen2.2.png"},
+    { sender: 'user', image: "screen2.3.png"},
+    { sender: 'user', text: "but then I had a problem. my phone had been broken for a while, so I was using my grandma's. the phone is an old TCL, very small if you ask me. six buttons on the bottom of a small screen can make life very difficult for the user. infuriating, actually. I kept hitting the wrong one, so I started digging deeper"},
+    { sender: 'user', text: "instead of finding solutions, I found more worries. besides my grandma's phone, I also have access to my cousin's phone, which is an iPhone 14 pro max. it's huge, like a brick. what I found? it's horrible to tap on anything from the middle to the top of the screen. If I'm using one hand, I only try it when I'm sure it won't break if I drop it—when I'm in bed or on the sofa. but if I'm using both hands, it's also very exhausting because I hold the phone from the bottom and have to climb up the phone to hit the top"},
+    { sender: 'user', text: "so how could I reduce the number of buttons without taking away the main actions? how could I build a navigation that was concentrated at the bottom of the screen? I learned about information architecture, studied established applications to understand how they organized their content, and the more time I spent with it, the more I realized that, as a user, I didn't like much of it"},
+    { sender: 'user', text: "most apps have 6 or 5 buttons at the bottom, but remember how awful that is on small phones? and their menu is always at the top, which is bad for the bricks. yeah, big companies doing things one way doesn't mean it's the right way. so... I did that, I did... I wanted to reinvent the wheel. I thought I could do it better, of course I could! so I came up with the following screens"},
+    { sender: 'user', image: "screen3.png"},
+    { sender: 'user', image: "screen3.1.png"},
+    { sender: 'user', image: "screen3.2.png"},
+    { sender: 'user', image: "screen3.3.png"},
+    { sender: 'user', text: "it was definitely the most irritating moment so far. I removed the indicator buttons at the top and three at the bottom. the text indicator would appear when the user tapped on the desired screen. if they wanted to go to another screen, tapping on the arrow would bring the navigator back. building the prototype was the first time, if I remember well, that I wanted to sit down and cry. happily, I continued to study and soon understood that there were far too many taps for a simple action"},
+    { sender: 'user', text: "I took what I'd learned under my arm and built another flow. still no buttons at the top to make it easy for users with big phones. only three buttons at the bottom to make it better for users with small phones. more options are displayed when the buttons are pressed and it's easier to reach"},
+    { sender: 'user', image: "screen4.png"},
+    { sender: 'user', image: "screen4.1.png"},
+    { sender: 'user', image: "screen4.2.png"},
+    { sender: 'user', image: "screen4.3.png"},
+    { sender: 'ai', text: "This is what the app looks like now?"},
+    { sender: 'user', text: "yeah, pretty much"},
+    { sender: 'ai', text: "What have you learned so far?"},
+    { sender: 'user', text: "oh, I'm going to make a list of What I've Learned So Far Building My First Product"},
+    {sender: 'user', text: "1. reinventing the wheel may be cool for the designer, but if it doesn't address the user's needs, it's like dressing up as a clown and telling jokes to an audience that never laughs and soon leaves"},
+    {sender: 'user', text: "2. when the internet first appeared, it had its weirdness because of the limitations of the moment. so the internet as we know it still has a lot of what it was like before, even though those limitations have been partially or completely removed. the fact is that we as users are very attached to what we already know, and designers have to find a way to make something great while respecting that"},
+    {sender: 'user', text: "3. I'm more excited about bringing an idea to life than creating a different navigation for each"},
+    {sender: 'user', text: "4. I suck at prototyping, even though I love designing"},
+    {sender: 'user', text: "5. separating my own opinions (based on who I am and what I like or dislike) from my product designer's opinions (based on design principles, information architecture, etc.) is very important to deliver the best possible work."},
+    {sender: 'user', text: "6. It helps to have a deadline so you don't spend a week deciding which icon is best for the home button"},
+    {sender: 'ai', text: "What are your next steps?"},
+    {sender: 'user', text: "this lists app in an ongoing project. I'm building all the flows and the backend. I understand 0 + 0 of the second item, so it's been challenging but fun. once I have the flows done, I'll move on to the front-end. to perfect myself, I've been building features for known apps. so far I've built a feature for Spotify, Netflix and I'm working on a few more for Whatsapp, and of course I have a list full of apps I'd like to add to"},
+    {sender: 'ai', text: "That is fantastic! How will they be able to see your work for themselves?"},
+    {sender: 'user', text: "I'll leave a link to each project, like these:"},
+    {sender: 'user', text: "the current lists app", link: "https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=56-1118&node-type=frame&viewport=3213%2C1890%2C0.67&t=NMEh4FVbCegC6XH3-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A1118"},
+    {sender: 'user', text: "the dedication/invitation/recommendation feature for Spotify", link: "https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?node-id=1-895&node-type=frame&t=Ak275fbJDNI1HfGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A687"},
+    {sender: 'user', text: "the make your own lists and stats feature for Netflix", link: "https://www.figma.com/proto/oSpa3RaUQi5YiHPk25n1Ex/Netflix?page-id=0%3A1&node-id=1-952&node-type=frame&viewport=942%2C728%2C0.47&t=uzSvjsiS9jQXiB15-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A952"},
+    {sender: 'user', text: "do you think they'll like it?"},
+    {sender: 'ai', text: "Should I answer as your mother or as a recruiter?"},
+    {sender: 'user', text: "give me both"},
+    {sender: 'ai', text: "As your mother, of course they will like it! They would be crazy not to. Any company that hired you would be lucky to have a mind like yours creating for them! As your recruiter, I have a list of 569 changes to make. Shall we get started?"},
+    {sender: 'user', text: "later, now I'm going to treat myself to some junk food"},
+    {sender: 'ai', text: "MAYANA!!!!!!!!!!!!!!!!!!!!!!!!!!!"},
+  ];
+  // Set initial messages to allMessages
+  const [messages, setMessages] = useState(allMessages);
 
   return (
-    <div className="p-8 bg-gray-50 flex flex-col items-center">
-      {/* Project Overview Section */}
-
-      <h1 className="sm:text-[104px] sm:w-[1000px] text-[60px] w-[450px] text-center font-bold mb-2 mt-48" style={{ lineHeight: '0.8' }}>I'm Mayana, the product designer.</h1>
-      <section className="w-full max-w-3xl text-center mb-4">
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        At 26, living in Brazil, I’m a creative soul eager to make a solid impact on the boring world around me. To join me on this journey, I invite you to scroll down and check out some of my latest creations. It won’t take more than 5 minutes of your time.</p>
-      </section>
-
-      <Arrow />
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-
-      {/* The Problem Section */}
-      <section className="w-full max-w-1xl text-center mb-4">
-        <h2 className="text-4xl font-bold mb-2">Developing a Feature for<br/> Movie Tracking Apps</h2>
-      </section>
-
-
-      <Arrow />
-
-
-      {/* The Problem Section */}
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-2xl font-bold mb-2">The problem</h2>
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        Reviewing and rating movies or TV shows is pretty common for enthusiasts of these art forms. There are many platforms that allow them to keep track of what they're watching and tell everyone else what they liked or didn't like and why. But users go to other platforms, like Twitter, to find specific comments. They search for words, hoping to get fresh, relevant results. But because the platform isn't built for that specific purpose, it's always a long shot. Movie tracking apps today are full of features, but I believe they are missing this one.</p>
-      </section>
-
-      <Arrow />
-
-      {/* The Goal Section */}
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-2xl font-bold mb-2">The goal</h2>
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        There is currently no direct way for users to interact by commenting on specific scenes. Adding a commenting feature could increase user engagement and foster a sense of community. The goal is to validate the need and effectiveness of this feature.</p>
-      </section>
-
-      <Arrow />
-
-<section className="w-full max-w-3xl text-center mb-4">
-  <h2 className="text-2xl font-bold mb-2">Research</h2>
-  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-  Conducted interviews with 5 active movie tracking app users to understand their needs and expectations regarding user interaction on the platforms.</p>
-</section>
-
-      {/* User Research Pain Points Section */}
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-base mb-2">Key insights:</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 text-left">
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Users find it difficult and time-consuming to find specific comments online.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Users try to get their friends and family to watch the same content so they have someone to talk to.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Existing platforms do not meet all their needs.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Users are tired of wading through unrelated content.</h3>
-          </div>
+    <div className="h-screen flex flex-col bg-white">
+      {/* Chat header */}
+      <div className="flex items-center justify-center p-4 border-b border-gray-300">
+        <div className='flex-col'>
+        <img
+          src="/3.png"
+          alt="User Avatar"
+          className="w-10 h-10 rounded-full mr-4"
+        />
+        <div>
+          <h2 className="text-lg font-semibold ml-3">AI</h2>
         </div>
-      </section>
-
-<Arrow />
-
-<section className="w-full max-w-3xl text-center mb-4">
-  <h2 className="text-2xl font-bold mb-2">Brainstorming</h2>
-  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-  Brainstorming sessions helped generate ideas for the commenting feature.
-  </p>
-</section>
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-base mb-2">Key considerations:</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 text-left">
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">A live mode where users can live comment movies with friends.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">The timestamp and comments must be in the same box view.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Users must have access to an easy to use and powerful search tool.</h3>
-          </div>
-          <div className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-            <h3 className="mb-2">Screens must have only the information needed for the current context.</h3>
-          </div>
         </div>
-      </section>
-
-      <Arrow />
-
-{/* The Goal Section */}
-<section className="w-full max-w-3xl text-center mb-4">
-  <h2 className="text-2xl font-bold mb-2">Prototyping</h2>
-  <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-  This interactive prototype, created using Figma, serves as a preliminary model to test and refine the user experience. It includes key functionality such as navigating to the comments section and reading specific comments from specific scenes. By simulating real user interactions, this prototype allowed me to gather valuable feedback and make necessary adjustments.
-</p>
-</section>
-
-      <div onClick={handlePlayPause} className='flex gap-5 playPauseButton mb-4'>
-      <button onClick={handlePlayPause} className="playPauseButton border-4 border-[#A6FDAF] p-2 rounded-lg">
-          Click here to watch the prototype
-        </button>
-
       </div>
 
-<div className="videoContainer sm:mb-2 sm:-mt-1 mb-2 -mt-2">
-        {isMounted && (
-          <video
-            ref={videoRef}
-
-            width={300}
-            height={200}
+     {/* Messages container */}
+      <div className="messages-container flex-1 p-4 overflow-y-auto space-y-4">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
-            <source src="/comment.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+            <div
+              className={`rounded-div p-3 max-w-lg ${
+                message.sender === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'
+              }`}
+            >
+              {message.link ? (
+                <a
+                  href={message.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block underline"
+                >
+                  <span>{message.text}</span> {/* Display text as a clickable link */}
+                </a>
+              ) : (
+                <span>{message.text}</span> // Display text normally if no link
+              )}
 
-      </div>
-
-<Arrow />
-
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-2xl font-bold mb-2">Usability Testing</h2>
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        Conducted usability tests with 5 users. A mix of regular movie tracking app users and cinephiles, ages 15-54, with varying levels of technical proficiency. Main tasks:
-        </p>
-      </section>
-      <div className='flex justify-center gap-6 mt-3 mb-5 max-w-3xl'>
-          <span  className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">        Discoverability: Verify if users can easily find and recognize the purpose of the feature.
-          </span>
-          <span className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">Understandability: Verify if users can intuitively understand how to use the tools without prior guidance.</span>
-        </div>
-
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-xl font-bold mb-2">Feedback</h2>
-        <p className="bg-[#A6FDAF] text-left p-4 rounded-lg shadow" style={{ lineHeight: '1.8' }}>
-        1. Participants discovered the purpose of the feature within the first 10 seconds. <br />
-2. Users showed excitement after discovery.<br />
-3. The search tool was highly praised.<br />
-4. Some users suggested adding quick emoji reactions.<br />
-5. Positive feedback was given on the UI.<br />
-6. Users wanted the filter to be more detailed.<br />
-7. Live mode was celebrated, but they were frustrated by not actually seeing it.<br />
-</p>
-      </section>
-
-      <Arrow />
-
-      <section className="w-full max-w-3xl text-center mb-4">
-        <h2 className="text-2xl font-bold mb-2">Conclusion</h2>
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        The validation of the commenting feature was successful, with participants responding positively and indicating a high likelihood of regular use. Moving forward, I will refine navigation, enhance visual feedback, and build a more robust prototype to conduct additional tests. Continuous iterative testing and user feedback incorporation will be crucial to ensure a seamless user experience. These steps will ensure the comment feature exceeds user expectations and enhances overall engagement on any platform.</p>
-      </section>
-
-
-
-
-
-
-
-
-
-
-
-      <Arrow />
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      </div>
-      <div className='-mt-3'>
-      <Arrow />
-      <h2 className="text-xl font-bold mb-2 text-center">Other projects</h2>
-      <div className='flex justify-center gap-6 mt-3 mb-5 max-w-3xl'>
-          <span  className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow"> A lists sharing app. Why? Because I'm that kind of person. From the grocery list to 11 reasons to never pee outside my house. I'd love to read other people lists. So I'm building an app to do just that.
-          </span>
-          <span className="bg-[#A6FDAF] h-13 p-3 rounded-lg shadow">An app to dedicate a song to someone, invite others to listen to an album, playlist, meet a new artist, go to a concert and much more. Because music is much more than just listening. Music is everything.</span>
-        </div>
-        <h2 className="text-sm mb-4 text-center">Clicking on them will take you to the prototype.</h2>
-      </div>
-
-      <div className='flex gap-16 mb-7'>
-      <a href='https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=56-1109&node-type=canvas&viewport=1407%2C891%2C0.27&t=GEuquyjgl4gmaxGp-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A1118'>
-            <Image
-            src="/listsapppic.png"
-            alt="home screen"
-            width={300}
-            height={200}
-            />
-            </a>
-              <a href='https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?node-id=1-895&node-type=frame&t=Ak275fbJDNI1HfGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A687'>
-              <Image
-            src="/musicapp.png"
-            alt="explore screen"
-            width={300}
-            height={200}
-            className='ml-4'
-            />  </a>
-
+              {/* Check if there's an image to display below the text */}
+              {message.image && (
+                <img
+                  src={message.image}
+                  alt="User sent content"
+                  className="w-full rounded-lg mt-2" // Add margin to separate from text
+                />
+              )}
+            </div>
           </div>
-      <div className='-mt-3 mb-3'>
-      <Arrow />
+        ))}
       </div>
 
-        <section className="w-full max-w-3xl text-center mb-3">
-        <p className="bg-[#A6FDAF] p-4 rounded-lg shadow">
-        If you’d like to help bring any of these apps to life, feel free to contact me at the email below. If you have any feedback to help me improve, I’d be happy to hear your thoughts. I’m going to be a great professional—it’s just a matter of time. Bookmark me and stick around. See you soon!
-        </p>
 
-      </section>
-
-      <div className='mt-4'>
-  <a href='mailto:mayanathedesigner@gmail.com' className='border-4 border-[#A6FDAF] p-2 rounded-lg mb-3 cursor-pointer'>
-    mayanathedesigner@gmail.com
-  </a>
-</div>
-
+{/* Input area as a simple div */}
+<div className="p-4 border-t border-gray-300 flex items-center bg-gray-100">
+        <div className="flex-1 rounded-full border border-gray-300 p-2 px-4">
+        <a href="mailto:mayanathedesigner@gmail.com" className="text-gray-500">email me at mayanathedesigner@gmail.com</a>
+        {/* Placeholder text */}
+        </div>
+        <a href="mailto:mayanathedesigner@gmail.com" className="ml-4 text-blue-500">Send</a> {/* Button can be disabled since no input is available */}
+      </div>
     </div>
   );
-};
-
-export default Home;
-
+}
