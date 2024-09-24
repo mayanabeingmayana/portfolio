@@ -56,13 +56,13 @@ export default function Home() {
     {sender: 'ai', text: "That is fantastic! How will they be able to see your work for themselves?"},
     {sender: 'user', text: "I'll leave a link to each project, like these:"},
     {sender: 'user', text: "the current lists app", link: "https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=56-1118&node-type=frame&viewport=3213%2C1890%2C0.67&t=NMEh4FVbCegC6XH3-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A1118"},
-    {sender: 'user', text: "the dedication/invitation/recommendation feature for Spotify", link: "https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Music-App?node-id=1-895&node-type=frame&t=Ak275fbJDNI1HfGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A687"},
+    {sender: 'user', text: "the dedication/invitation/recommendation feature for Spotify", link: "https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Spotify?node-id=0-1&node-type=canvas&viewport=1018%2C341%2C0.14&t=B2D5cBmAO98BvlfR-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A687"},
     {sender: 'user', text: "the make your own lists and stats feature for Netflix", link: "https://www.figma.com/proto/oSpa3RaUQi5YiHPk25n1Ex/Netflix?page-id=0%3A1&node-id=1-952&node-type=frame&viewport=942%2C728%2C0.47&t=uzSvjsiS9jQXiB15-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A952"},
     {sender: 'user', text: "do you think they'll like it?"},
     {sender: 'ai', text: "Should I answer as your mother or as a recruiter?"},
     {sender: 'user', text: "give me both"},
     {sender: 'ai', text: "As your mother, of course they will like it! They would be crazy not to. Any company that hired you would be lucky to have a mind like yours creating for them! As your recruiter, I have a list of 569 changes to make. Shall we get started?"},
-    {sender: 'user', text: "THAT MUCH? later, now I'm going to treat myself to some junk food"},
+    {sender: 'user', text: "THAT MUCH? later, now I'm gonna treat myself to some junk food"},
     {sender: 'ai', text: "MAYANA!!!!!!!!!!!!!!!!!!!!!!!!!!!"},
   ];
   // Set initial messages to allMessages
