@@ -49,15 +49,16 @@ export default function Home() {
     { sender: 'user', text: "oh, I'm going to make a list of What I've Learned So Far Building My First Product"},
     {sender: 'user', text: "1. reinventing the wheel may be cool for the designer, but if it doesn't address the user's needs, it's like dressing up as a clown and telling jokes to an audience that never laughs and soon leaves"},
     {sender: 'user', text: "2. when the internet first appeared, it had its weirdness because of the limitations of the moment. so the internet as we know it still has a lot of what it was like before, even though those limitations have been partially or completely removed. the fact is that we as users are very attached to what we already know, and designers have to find a way to make something great while respecting that"},
-    {sender: 'user', text: "3. I'm better at creating something new or updating old stuff than making animations or prototyping"},
-    {sender: 'user', text: "4. separating my own opinions (based on who I am and what I like or dislike) from my product designer's opinions (based on design principles, information architecture, etc.) is very important to deliver the best possible work"},
+    {sender: 'user', text: "3. separating my own opinions (based on who I am and what I like or dislike) from my product designer's opinions (based on design principles, information architecture, etc.) is very important to deliver the best possible work"},
     {sender: 'ai', text: "What are your next steps?"},
-    {sender: 'user', text: "this lists app in an ongoing project. I'm building all the flows and the backend. I understand 0 + 0 of the second item, so it's been challenging but fun. once I have the flows done, I'll move on to the front-end. to perfect myself, I've been building features for known apps. so far I've built a feature for Spotify, Netflix and I'm working on a few more for Whatsapp, and of course I have a list full of apps I'd like to add to"},
+    {sender: 'user', text: "this lists app in an ongoing project. I'm building all the flows and the backend. I understand 0 + 0 of the second item, so it's been challenging but fun. once I've got the flows done, I'll move on to the front-end"},
+    {sender: 'user', text: "to perfect myself, I've been building features for known apps. so far I've built a word game for The New York Times, a feature for Spotify, another for Netflix and I'm working on a few more for Whatsapp, and of course I have a list full of apps I'd like to add to"},
     {sender: 'ai', text: "That is fantastic! How will they be able to see your work for themselves?"},
     {sender: 'user', text: "I'll leave a link to each project, like these:"},
     {sender: 'user', text: "the current lists app", link: "https://www.figma.com/proto/OQhhUxGOouEwaLCPncerbs/Lists?page-id=0%3A1&node-id=56-1118&node-type=frame&viewport=3213%2C1890%2C0.67&t=NMEh4FVbCegC6XH3-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=56%3A1118"},
     {sender: 'user', text: "the dedication/invitation/recommendation feature for Spotify", link: "https://www.figma.com/proto/nszbc7qbp6VebbIi7eOxGX/Spotify?node-id=0-1&node-type=canvas&viewport=1018%2C341%2C0.14&t=B2D5cBmAO98BvlfR-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A687"},
     {sender: 'user', text: "the make your own lists and stats feature for Netflix", link: "https://www.figma.com/proto/oSpa3RaUQi5YiHPk25n1Ex/Netflix?page-id=0%3A1&node-id=1-952&node-type=frame&viewport=942%2C728%2C0.47&t=uzSvjsiS9jQXiB15-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A952"},
+    {sender: 'user', text: "the word game for The New York Times", link: "nextletters.com"},
     {sender: 'user', text: "do you think they'll like it?"},
     {sender: 'ai', text: "Should I answer as your mother or as a recruiter?"},
     {sender: 'user', text: "give me both"},
@@ -114,7 +115,7 @@ export default function Home() {
                 <img
                   src={message.image}
                   alt="User sent content"
-                  className="w-full rounded-lg mt-2" // Add margin to separate from text
+                  className="w-full rounded-lg" // Add margin to separate from text
                 />
               )}
             </div>
