@@ -7,7 +7,7 @@ export default function Home() {
     { sender: 'user', text: "hi artificial intelligence, I'm getting ready to apply for product design roles, so I need you to help me practice presenting my project. pretend you're a hiring manager from a big company, get the necessary info, then tell me how to structure it all and make me do my best work. but not only that, you're also my mum"},
     { sender: 'ai', text: "All right, dear. But first things first, did you eat properly today? Please tell me you have not had any junk food this week!"},
     { sender: 'user', text: "this is not the time for that, get straight to the point"},
-    { sender: 'ai', text: "Mayana, answer me!"},
+    { sender: 'ai', text: "Mayana, answer me!!"},
     { sender: 'user', text: "YES, I HAVE EATEN PROPERLY, CAN WE PLEASE START????"},
     { sender: 'ai', text: "Good, good. I will call your grandmother, she will be happy to know! And yes, now we can. Tell me, how are you going to start your presentation?"},
     { sender: 'user', text: "I guess I should tell them a little bit about me, like my name is Mayana, I'm a 26-year-old creative soul from Brazil, who loves reading thrillers, listening to old people and the touch of the sun on my skin for the first time in the day. I'm also always thinking of something new and the only thing that makes me sad about having so little time on earth is the fact that I'll never be able to get all my ideas out of my head"},
